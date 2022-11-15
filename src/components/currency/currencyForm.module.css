@@ -1,0 +1,10 @@
+.currForm {
+  display: flex;
+  flex-direction: row;
+}
+
+.currencyForm__select_currency {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
