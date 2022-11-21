@@ -1,64 +1,40 @@
 import Flag from 'react-world-flags'
+import { BsChevronDown } from 'react-icons/bs'
 import styles from './SelectCurrency.module.css'
 import { useState } from 'react'
 
-function SelectCurrency({ selected, setSelected }) {
-  const [isActive, setIsActive] = useState(false)
+import { FormControl, NativeSelect, InputLabel, Select } from '@mui/material'
 
-  const options = ['EUR', 'PLN', 'GBP']
-
+function SelectCurrency({ country, text, setValue }) {
+  const flags = ['gbr', 'try', 'pol']
   return (
-    <div className={styles.dropdown}>
-      <div
-        className={styles.dropdown_btn}
-        onClick={(e) => setIsActive(!isActive)}
+    <>
+      <FormControl
+        className={styles.select}
+        onChange={(e) => setValue(e.target.value)}
       >
-        {selected}
-      </div>
-      {isActive && (
-        <div className={styles.dropdown_content}>
-          {options.map((option) => (
-            <div
-              onClick={(e) => {
-                setSelected(option)
-                setIsActive(false)
-              }}
-              className={styles.dropdown_item}
-            >
-              {option}
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+        <InputLabel variant="standard" htmlFor="uncontrolled-native">
+          {text}
+        </InputLabel>
+        <NativeSelect
+          defaultValue={30}
+          inputProps={{
+            name: 'age',
+            id: 'uncontrolled-native',
+          }}
+        >
+          {country.map((currency) => {
+            return <option>{currency}</option>
+          })}
+        </NativeSelect>
+      </FormControl>
+    </>
   )
 }
 export default SelectCurrency
 
 // return (
-//   <div>
-//     <div class={styles.select_container}>
-//       <div class={styles.option_container}></div>
-//       <div class={styles.select}>
-//         <input
-//           type="text"
-//           id="input"
-//           placeholder="select"
-//           onfocus="this.blur();"
-//         />
-//       </div>
-//       {options.map((option) => {
-//         return (
-//           <>
-//             <div class={styles.option}>
-//               <label>
-//                 <Flag code={option.value} height="16" />
-//                 <span>{option.label}</span>
-//               </label>
-//             </div>
-//           </>
-//         )
-//       })}
-//     </div>
-//   </div>
-// )
+// <Flag code="gbr" height="16" />
+//      <Flag code="pol" height="16" />
+//      <Flag code="gbr" height="16" />
+// { <Flag code="try" height="16" />}

@@ -6,5 +6,19 @@
 .currencyForm__select_currency {
   display: flex;
   flex-direction: row;
-  margin: 10px;
+  margin: 30px;
+  justify-content: center;
+}
+
+.currencyForm__arrows {
+  display: inline-block;
+  color: blue;
+  margin: 0px 30px;
+  width: 20px;
+}
+
+.inputs {
+  display: flex;
+  margin: 50px;
+  justify-content: center;
 }
