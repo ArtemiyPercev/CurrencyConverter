@@ -1,10 +1,9 @@
 import styles from './inputAmount.module.css'
 
-function InputAmount({ text, setText }) {
+const InputAmount = ({ setAmount }) => {
   return (
-    <div className={styles.inputNum} onChange={(e) => setText(e.target.value)}>
-      <h4>{text}</h4>
-      <input type="number" />
+    <div className={styles.inputNum}>
+      <input type="number" onChange={(e) => setAmount(e.target.value)} />
     </div>
   )
 }

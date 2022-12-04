@@ -1,9 +1,9 @@
 import styles from './Button.module.css'
 
-function Button() {
+const Button = ({ onConvert }) => {
   return (
     <>
-      <button className={styles.button} type="submit">
+      <button className={styles.button} type="submit" onClick={onConvert}>
         Convert
       </button>
     </>

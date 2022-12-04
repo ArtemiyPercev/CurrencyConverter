@@ -1,3 +1,8 @@
-.select {
+.selectCurrency {
+  display: block;
   width: 200px;
+  max-width: 100%;
+  padding: 0.6em 1.4em 0.5em 0.8em;
+  border: none;
+  border-bottom: 1px solid black;
 }

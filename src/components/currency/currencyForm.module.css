@@ -3,14 +3,14 @@
   flex-direction: row;
 }
 
-.currencyForm__select_currency {
+.currencyForm_Selects {
   display: flex;
   flex-direction: row;
   margin: 30px;
   justify-content: center;
 }
 
-.currencyForm__arrows {
+.currencyForm_arrows {
   display: inline-block;
   color: blue;
   margin: 0px 30px;
